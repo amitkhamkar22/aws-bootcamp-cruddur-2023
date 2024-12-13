@@ -97,6 +97,8 @@ which will return a TopicARN
 
 We'll create a subscription supply the TopicARN and our Email
 ```sh
+
+### Execute command to create SNS Topic
 aws sns subscribe \
     --topic-arn TopicARN \
     --protocol email \
@@ -112,6 +114,46 @@ Check your email and confirm the subscription
 - We need to update the configuration json script with the TopicARN we generated earlier
 - We are just a json file because --metrics is is required for expressions and so its easier to us a JSON file.
 
+### Example alarm json file
+
+```sh
+{
+    "AlarmName": "DailyEstimatedCharges",
+    "AlarmDescription": "This alarm would be triggered if the daily estimated charges exceeds 10$",
+    "ActionsEnabled": true,
+    "AlarmActions": [
+        "arn:aws:sns:us-east-2:339**********:billing-alarm"
+    ],
+    "EvaluationPeriods": 1,
+    "DatapointsToAlarm": 1,
+    "Threshold": 1,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "TreatMissingData": "breaching",
+    "Metrics": [{
+        "Id": "m1",
+        "MetricStat": {
+            "Metric": {
+                "Namespace": "AWS/Billing",
+                "MetricName": "EstimatedCharges",
+                "Dimensions": [{
+                    "Name": "Currency",
+                    "Value": "USD"
+                }]
+            },
+            "Period": 86400,
+            "Stat": "Maximum"
+        },
+        "ReturnData": false
+    },
+    {
+        "Id": "e1",
+        "Expression": "IF(RATE(m1)>0,RATE(m1)*86400,0)",
+        "Label": "DailyEstimatedCharges",
+        "ReturnData": true
+    }]
+}
+```
+### Execute command to create alarm
 ```sh
 aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
 ```
@@ -124,7 +166,61 @@ Get your AWS Account ID
 ```sh
 aws sts get-caller-identity --query Account --output text
 ```
+### Example pudget json file
+```sh
+{
+    "BudgetLimit": {
+        "Amount": "100",
+        "Unit": "USD"
+    },
+    "BudgetName": "Example Tag Budget",
+    "BudgetType": "COST",
+    "CostFilters": {
+        "TagKeyValue": [
+            "user:Key$value1",
+            "user:Key$value2"
+        ]
+    },
+    "CostTypes": {
+        "IncludeCredit": true,
+        "IncludeDiscount": true,
+        "IncludeOtherSubscription": true,
+        "IncludeRecurring": true,
+        "IncludeRefund": true,
+        "IncludeSubscription": true,
+        "IncludeSupport": true,
+        "IncludeTax": true,
+        "IncludeUpfront": true,
+        "UseBlended": false
+    },
+    "TimePeriod": {
+        "Start": 1477958399,
+        "End": 3706473600
+    },
+    "TimeUnit": "MONTHLY"
+}
+```
+### Example notification jason file
+```sh
+[
+    {
+        "Notification": {
+            "ComparisonOperator": "GREATER_THAN",
+            "NotificationType": "ACTUAL",
+            "Threshold": 80,
+            "ThresholdType": "PERCENTAGE"
+        },
+        "Subscribers": [
+            {
+                "Address": "example@example.com",
+                "SubscriptionType": "EMAIL"
+            }
+        ]
+    }
+]
+```
 
+### Execute command to create budget
 - Supply your AWS Account ID
 - Update the json files
 - This is another case with AWS CLI its just much easier to json files due to lots of nested json
@@ -135,3 +231,4 @@ aws budgets create-budget \
     --budget file://aws/json/budget.json \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json
 ```
+
