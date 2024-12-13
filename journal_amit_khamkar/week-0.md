@@ -144,9 +144,9 @@ aws sns create-topic --name billing-alarm
 which will return a TopicARN
 
 We'll create a subscription supply the TopicARN and our Email
-```sh
 
-### Execute command to create SNS Topic
+### Execute command to send notifications to an Email
+```sh
 aws sns subscribe \
     --topic-arn TopicARN \
     --protocol email \
@@ -201,6 +201,7 @@ Check your email and confirm the subscription
     }]
 }
 ```
+
 ### Execute command to create alarm
 ```sh
 aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
