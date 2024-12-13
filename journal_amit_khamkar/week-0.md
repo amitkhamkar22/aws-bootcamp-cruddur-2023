@@ -44,4 +44,7 @@ You will absolutely want to activate Multi Factor Authentication (MFA) too for y
 
 -  Now we set up MFA for the [user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html)
 
-- we can login into our IAM user after inputing the MFA code 
+- we can login into our IAM user after inputing the MFA code
+
+# Creat budget and CloudWatch alarm using CLI
+
