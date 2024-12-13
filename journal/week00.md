@@ -65,9 +65,9 @@ aws sts get-caller-identity
 You should see something like this:
 ```json
 {
-    "UserId": "AIFBZRJIQN2ONP4ET4EK4",
-    "Account": "655602346534",
-    "Arn": "arn:aws:iam::655602346534:user/andrewcloudcamp"
+    "UserId": "AIDAU**************",
+    "Account": "339*********",
+    "Arn": "arn:aws:iam::339*********:user/techethos"
 }
 ```
 
