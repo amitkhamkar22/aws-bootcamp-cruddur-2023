@@ -290,6 +290,11 @@ A logical architecture diagram is a more detailed representation of the system t
 
 ![image](https://github.com/user-attachments/assets/3d7d0296-d023-4a1b-b50e-5b17d9f99541)
 
+Architecture diagrams are a great way to communicate your design, deployment, and topology.
+AWS architecture icons are designed to be simple, so you can easily use them in diagrams. You can also put icons in materials like whitepapers, presentations, datasheets, and posters.
+You can build diagrams with preexisting libraries on third-party tools. Check that you’re using up-to-date icons, because some libraries may contain legacy icon sets.
+[AWS Architecture Center](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc&wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&wa-guidance-whitepapers.sort-order=desc) 
+
 
 ## Well Architected Tool
 The Well-Architected Framework is a set of best practices created by AWS to ensure that workloads on their cloud platform are designed in the most efficient and effective way.
@@ -301,9 +306,9 @@ The Well-Architected Framework is a set of best practices created by AWS to ensu
    - The tool is accessed through the AWS console and requires you to define your workload, answer questions about it, and assign responsibility for maintaining the report.
 
    - The Well-Architected Tool can be used to ensure that your cloud-based workloads are running at peak efficiency and align with best practices in each of the five or six pillars.
+[Link](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc&wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&wa-guidance-whitepapers.sort-order=desc)
 
-## THE 6 PILLARS
-
+### THE 6 PILLARS
 
    - Operational Excellence: This pillar focuses on running and monitoring systems to deliver business value, continuously improving processes and procedures, and ensuring that personnel and   procedures are in place to respond to operational events.
 
@@ -316,3 +321,7 @@ The Well-Architected Framework is a set of best practices created by AWS to ensu
    - Cost Optimization: This pillar focuses on avoiding unneeded costs, identifying opportunities to reduce costs, and making informed decisions about which services to use and how to provision them.
 
    - Sustainability Pillar: This pillar focuses on minimizing the environmental impacts of running cloud workloads. Key topics include a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts.
+
+
+When architecting workloads, you make trade-offs between pillars based on your business context. These business decisions can drive your engineering priorities. You might optimize to improve sustainability impact and reduce cost at the expense of reliability in development environments, or, for mission-critical solutions, you might optimize reliability with increased costs and sustainability impact. In ecommerce solutions, performance can affect revenue and customer propensity to buy. Security and operational excellence are generally not traded-off against the other pillars.
+
