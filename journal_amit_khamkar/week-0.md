@@ -288,6 +288,8 @@ A conceptual architecture diagram is a high-level representation of the system t
 ## Logical Architectual Diagram in Lucid Charts
 A logical architecture diagram is a more detailed representation of the system that shows how the major components and subsystems fit together, as well as how data flows between them. This diagram is focused on the logical components of the system, and often includes information about specific technologies, platforms, and protocols that will be used.
 
+![image](https://github.com/user-attachments/assets/3d7d0296-d023-4a1b-b50e-5b17d9f99541)
+
 
 ## Well Architected Tool
 The Well-Architected Framework is a set of best practices created by AWS to ensure that workloads on their cloud platform are designed in the most efficient and effective way.
