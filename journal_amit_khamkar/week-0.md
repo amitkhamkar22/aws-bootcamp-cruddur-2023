@@ -288,7 +288,7 @@ A conceptual architecture diagram is a high-level representation of the system t
 ## Logical Architectual Diagram in Lucid Charts
 A logical architecture diagram is a more detailed representation of the system that shows how the major components and subsystems fit together, as well as how data flows between them. This diagram is focused on the logical components of the system, and often includes information about specific technologies, platforms, and protocols that will be used.
 
-![image](https://github.com/user-attachments/assets/6dcbe2f8-1867-44a9-bf23-ee120a40a6a0)
+![image](https://github.com/user-attachments/assets/286535e5-9137-402f-a27c-b987612ef03b)
 
 Architecture diagrams are a great way to communicate your design, deployment, and topology.
 AWS architecture icons are designed to be simple, so you can easily use them in diagrams. You can also put icons in materials like whitepapers, presentations, datasheets, and posters.
