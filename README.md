@@ -33,3 +33,9 @@ The `/journal` directory contains
 - [ ] [Week 11](journal/week11.md)
 - [ ] [Week 12](journal/week12.md)
 - [ ] [Week 13](journal/week13.md)
+
+export HONEYCOMB_API_KEY="hcaik_01jfbddj0ks1mqwmd6yxrmjesc3wmmv2sgjv9xdrjm2cqqa55dmmqfs0ry"
+gp env HONEYCOMB_API_KEY="hcaik_01jfbddj0ks1mqwmd6yxrmjesc3wmmv2sgjv9xdrjm2cqqa55dmmqfs0ry"
+
+export HONEYCOMB_SERVICE_NAME="Cruddur"
+gp env HONEYCOMB_SERVICE_NAME="Cruddur"
