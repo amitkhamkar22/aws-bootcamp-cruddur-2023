@@ -148,7 +148,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Message'
-
   /api/activities/notifications:
     get:
       description: 'Return feed of activities for all whom I follow'
@@ -164,7 +163,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Activity'
-
 components:
   schemas:
     Activity:
