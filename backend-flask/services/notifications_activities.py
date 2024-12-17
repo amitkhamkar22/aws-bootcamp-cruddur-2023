@@ -23,6 +23,5 @@ class NotificationsActivities:
       }],
     }
     ]
-    print("results: ",results)
     return results
    
