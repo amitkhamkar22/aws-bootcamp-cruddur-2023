@@ -153,7 +153,6 @@ paths:
       description: 'Return feed of activities for all whom I follow'
       tags:
         - activities
-      parameters: []
       responses:
         '200':
           description: Returns an array of activities
